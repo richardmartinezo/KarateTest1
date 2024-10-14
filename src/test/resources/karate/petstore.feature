@@ -10,10 +10,10 @@ Feature: PetStore API Testing
 
 
   Scenario: Get a pet by ID
-    Given url 'https://petstore.swagger.io/v2/pet/1'
+    Given url 'https://petstore.swagger.io/v2/pet/1001'
     When method GET
     Then status 200
-    And match response contains { "id": 1, "name": "doggie" }
+    And match response contains { "id": 1001, "name": "Hela" }
 
   Scenario: Update the pet information
     Given url 'https://petstore.swagger.io/v2/pet'
@@ -22,6 +22,13 @@ Feature: PetStore API Testing
     Then status 200
     And match response.name == "HelaUpdated"
     And match response.status == "sold"
+
+  Scenario: Get a pet by STATUS
+    Given url 'https://petstore.swagger.io/v2/pet/findByStatus?status=sold'
+    When method GET
+    Then status 200
+    And match each response[*].status == 'sold'
+    And match response contains { "name": "HelaUpdated" }
 
   Scenario: Delete the pet by ID
     Given url 'https://petstore.swagger.io/v2/pet/1001'
