@@ -27,8 +27,8 @@ Feature: PetStore API Testing
     Given url 'https://petstore.swagger.io/v2/pet/findByStatus?status=sold'
     When method GET
     Then status 200
-    And match each response[*].status == 'sold'
-    And match response contains { "name": "HelaUpdated" }
+    And match each response[*].status == "sold"
+    And match response.name == "HelaUpdated"
 
   Scenario: Delete the pet by ID
     Given url 'https://petstore.swagger.io/v2/pet/1001'

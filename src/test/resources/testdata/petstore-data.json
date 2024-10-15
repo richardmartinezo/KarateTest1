@@ -1,0 +1,16 @@
+{
+  "createPet": {
+    "id": 1001,
+    "name": "Hela",
+    "status": "available"
+  },
+  "updatePet": {
+    "id": 1001,
+    "name": "HelaUpdated",
+    "status": "sold"
+  },
+  "searchByStatus": {
+    "status": "sold",
+    "name": "HelaUpdated"
+  }
+}

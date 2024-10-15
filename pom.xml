@@ -118,6 +118,7 @@
 
 
 
+
   </dependencies>
   <build>
     <plugins>
@@ -127,6 +128,7 @@
         <version>${serenity.version}</version>
         <configuration>
           <tags>${tags}</tags>
+
         </configuration>
         <executions>
           <execution>
