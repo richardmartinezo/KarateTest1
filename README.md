@@ -7,7 +7,8 @@ Requirements:
 - Maven version 3.9.9
 - JDK version 17
 
-
+Install commands:
+- mvn install -DskipTests (install all POM dependencies)
 
 Instructions to run tests Karate:
 
