@@ -29,3 +29,8 @@ Feature: Updated Petstore API tests
     Then status 200
     And match each response[*].status == petData.searchByStatus.status
     * print 'Conclusion: Pets with status sold have been successfully retrieved'
+
+    # Conclusion Scenario
+  Scenario: Document conclusions
+    Given the pet store API tests have been executed
+    Then the conclusions should be documented
