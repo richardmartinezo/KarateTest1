@@ -12,6 +12,7 @@ Feature: Updated Petstore API tests
     Then status 200
     And match response.name == petData.createPet.name
     And match response.status == petData.createPet.status
+    * print 'Conclusion: New pet has been successfully added'
 
   Scenario: Update the pet information
     Given url 'https://petstore.swagger.io/v2/pet'
@@ -20,9 +21,11 @@ Feature: Updated Petstore API tests
     Then status 200
     And match response.name == petData.updatePet.name
     And match response.status == petData.updatePet.status
+    * print 'Conclusion: Pet information has been successfully updated'
 
   Scenario: Search for pets by status 'sold'
     Given url 'https://petstore.swagger.io/v2/pet/findByStatus?status=' + petData.searchByStatus.status
     When method GET
     Then status 200
     And match each response[*].status == petData.searchByStatus.status
+    * print 'Conclusion: Pets with status sold have been successfully retrieved'
