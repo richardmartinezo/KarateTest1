@@ -2,13 +2,10 @@ Feature: Updated Petstore API tests
 
   Background:
     * def petData = read('../testdata/petstore-data.json')
-    * set petData.createPet.id = 1001
-    * set petData.createPet.name = "Hela"
-    * set petData.createPet.status = "available"
-    * print 'Payload being sent:', petData
-    * karate.log('Payload:', petData)
+    * print 'Pet Data:', petData
 
-  Scenario: Add a new pet, petData.createPet.id
+
+  Scenario: Add a new pet
     Given url 'https://petstore.swagger.io/v2/pet'
     And request { "id": petData.createPet.id, "name": petData.createPet.name, "status": petData.createPet.status }
     When method POST
